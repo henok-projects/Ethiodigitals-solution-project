@@ -1,5 +1,5 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
-import React from 'react';
+import { CheckCircle, Mail, MapPin, Phone } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../../components/ui/button';
 import Navbar from '../constants/navbar/Navbar';
 import { Ambulance, Check, ClipboardPlus, Cross, Hospital, Languages, Linkedin, Menu, Siren, SquareGanttChart, X } from 'lucide-react';
@@ -7,12 +7,12 @@ import { Ambulance, Check, ClipboardPlus, Cross, Hospital, Languages, Linkedin, 
 const links = [
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/henok-addis-bb1484174/',
     icon: Linkedin,
   },
   {
     name: 'Gmail',
-    href: '#',
+    href: 'mailto:henokaddis72@gmail.com',
     icon: Mail,
   },
   {
@@ -23,6 +23,67 @@ const links = [
 ];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+
+  const [status, setStatus] = useState(null);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    console.log(`Name: ${name}, Value: ${value}`);
+    // Map `first-name` to `firstName` and `last-name` to `lastName`
+    const fieldName = name === 'first-name' ? 'firstName' : name === 'last-name' ? 'lastName' : name;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [fieldName]: value,
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    // Show success message optimistically
+    setStatus('success'); // Display success message immediately
+    try {
+      const response = await fetch('https://ethiodigitals-solution-backend-1.onrender.com/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        setStatus('error'); // Update to error if the response fails
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error'); // Handle network errors
+    }
+
+    // Reset the form fields
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: '',
+    });
+  };
+
+  useEffect(() => {
+    if (status) {
+      const timeout = setTimeout(() => {
+        setStatus(null); // Reset status after 20 seconds
+      }, 20000);
+
+      return () => clearTimeout(timeout); // Cleanup timeout
+    }
+  }, [status]);
+
   return (
     <div className="bg-white ">
       <Navbar />
@@ -144,7 +205,7 @@ export default function Contact() {
             {/* Contact form */}
             <div className="px-6 py-10 sm:px-10 lg:col-span-2 xl:p-12">
               <h3 className="text-lg font-medium text-gray-900">Send us a message</h3>
-              <form action="#" method="POST" className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+              <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                 <div>
                   <label htmlFor="first-name" className="block text-sm font-medium text-gray-900">
                     First name
@@ -152,9 +213,13 @@ export default function Contact() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      name="first-name"
+                      name="firstName"
                       id="first-name"
+                      placeholder="First Name"
                       autoComplete="given-name"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
                       className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary focus:ring-primary"
                     />
                   </div>
@@ -166,8 +231,12 @@ export default function Contact() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      name="last-name"
+                      name="lastName"
                       id="last-name"
+                      placeholder="Last Name"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
                       autoComplete="family-name"
                       className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     />
@@ -182,6 +251,10 @@ export default function Contact() {
                       id="email"
                       name="email"
                       type="email"
+                      placeholder="Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       autoComplete="email"
                       className="block w-full border rounded-md border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     />
@@ -201,6 +274,9 @@ export default function Contact() {
                       type="text"
                       name="phone"
                       id="phone"
+                      placeholder="Phone (Optional)"
+                      value={formData.phone}
+                      onChange={handleChange}
                       autoComplete="tel"
                       className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                       aria-describedby="phone-optional"
@@ -216,6 +292,10 @@ export default function Contact() {
                       type="text"
                       name="subject"
                       id="subject"
+                      placeholder="Subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
                       className="block w-full border rounded-md border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     />
                   </div>
@@ -234,6 +314,10 @@ export default function Contact() {
                       id="message"
                       name="message"
                       rows={4}
+                      placeholder="Message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                       className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                       aria-describedby="message-max"
                       defaultValue={''}
@@ -241,9 +325,27 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="sm:col-span-2 sm:flex sm:justify-end">
-                  <Button variant="default">Submit</Button>
+                  <Button variant="default" style={{ backgroundColor: 'rgb(8, 24, 94)' }}>
+                    Submit
+                  </Button>
+                  {status && <p>{status}</p>}
                 </div>
               </form>
+              {/* Success Message */}
+              {status === 'success' && (
+                <div className="mt-6 flex items-center bg-green-100 border border-green-300 text-green-800 rounded-md p-4">
+                  <CheckCircle className="h-6 w-6 flex-shrink-0 mr-2" aria-hidden="true" />
+                  <p>Your message has been sent successfully!</p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {status === 'error' && (
+                <div className="mt-6 flex items-center bg-red-100 border border-red-300 text-red-800 rounded-md p-4">
+                  <CheckCircle className="h-6 w-6 flex-shrink-0 mr-2 text-red-500" aria-hidden="true" />
+                  <p>Something went wrong. Please try again.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -254,7 +356,7 @@ export default function Contact() {
           <div className="flex flex-col lg:flex-row justify-between items-center">
             <div className="mb-4 lg:mb-0">
               <a href="/" className="flex items-center">
-                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
                 <span className="ml-3 text-xl font-bold">Ethio Digitals Solution</span>
               </a>
             </div>

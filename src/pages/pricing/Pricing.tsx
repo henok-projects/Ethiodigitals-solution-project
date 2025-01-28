@@ -15,12 +15,12 @@ const navigation = [
 const links = [
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/henok-addis-bb1484174/',
     icon: Linkedin,
   },
   {
     name: 'Gmail',
-    href: '#',
+    href: 'mailto:henokaddis72@gmail.com',
     icon: Mail,
   },
   {
@@ -33,7 +33,6 @@ const links = [
 const pricingPlans = [
   {
     name: 'SEO Optimization',
-    price: '19,000 birr/month',
     features: [
       'Keyword research and optimization',
       'On-page and off-page SEO',
@@ -45,7 +44,6 @@ const pricingPlans = [
   },
   {
     name: 'Web Design & Development',
-    price: '100,000 birr (one-time)',
     features: [
       'Custom responsive website design',
       'Basic e-commerce functionality',
@@ -57,7 +55,6 @@ const pricingPlans = [
   },
   {
     name: 'Social Media Marketing',
-    price: '20,000 birr/month',
     features: [
       'Tailored content creation for 2 platforms',
       'Up to 10,000 followers engagement',
@@ -69,7 +66,6 @@ const pricingPlans = [
   },
   {
     name: 'Complete Digital Marketing Package',
-    price: '150,000 birr/month',
     features: [
       'SEO Optimization',
       'Web Design & Development',
@@ -93,7 +89,7 @@ export default function PricingPage() {
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Ethio Digitals Solution</span>
-              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic" />
+              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -127,7 +123,7 @@ export default function PricingPage() {
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Ethio Digitals Solution</span>
-                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
               </a>
               <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
@@ -186,7 +182,6 @@ export default function PricingPage() {
                 {pricingPlans.map(plan => (
                   <div key={plan.name} className={`p-6 rounded-lg shadow-md ${plan.name === 'Startup' ? 'border-2 border-primary' : ''}`}>
                     <h3 className="text-lg font-semibold leading-7 text-gray-900">{plan.name}</h3>
-                    <p className="text-xl font-bold text-gray-900">{plan.price}</p>
                     <ul className="mt-4 space-y-2 text-gray-600">
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-center">
@@ -213,7 +208,7 @@ export default function PricingPage() {
             <div className="flex flex-col lg:flex-row justify-between items-center">
               <div className="mb-4 lg:mb-0">
                 <a href="/" className="flex items-center">
-                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
                   <span className="ml-3 text-xl font-bold">Ethio Digitals Solution</span>
                 </a>
               </div>

@@ -122,7 +122,7 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
                   </TransitionChild>
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-primary px-6 pb-4">
                     <div className="flex h-16 shrink-0 items-center">
-                      <img className="h-8 w-auto" src="/asset/Favicons/logo1.jpg" alt="Your Company" />
+                      <img className="h-8 w-auto" src="/asset/Favicons/logo1.jpeg" alt="Your Company" />
                     </div>
                     <nav className="flex flex-1 flex-col">
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -173,7 +173,7 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-primary px-6 pb-4">
             <div className="flex h-16 shrink-0 items-center justify-start">
-              <img className="h-14 w-auto" src="/asset/Favicons/logo1.jpg" alt="Your Company" />
+              <img className="h-14 w-auto" src="/asset/Favicons/logo1.jpeg" alt="Your Company" />
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">

@@ -101,7 +101,7 @@ const Register = () => {
     <div className={styles['registration-container']}>
       <div className={styles.navbar}>
         <div className={styles.logoContainer} onClick={() => (window.location.href = '/')}>
-          <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+          <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
         </div>
         <div className={`${styles.menuIcon} ${menuOpen ? styles.open : ''}`} onClick={handleToggleMenu}>
           <div className={styles.bar}></div>

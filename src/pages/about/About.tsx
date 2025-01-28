@@ -72,12 +72,12 @@ const values = [
 const links = [
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/henok-addis-bb1484174/',
     icon: Linkedin,
   },
   {
     name: 'Gmail',
-    href: '#',
+    href: 'mailto:henokaddis72@gmail.com',
     icon: Mail,
   },
   {
@@ -88,8 +88,30 @@ const links = [
 ];
 
 const teamMembers = [
-  { name: 'Fasika Getie', role: 'CEO and Co-Founder', image: '../asset/team/fasika.jpg' },
-  { name: 'Henok Addis', role: 'COO and Co-Founder', image: '../asset/team/henok1.jpg' },
+  {
+    name: 'Henok Addis',
+    role: 'COO and Co-Founder',
+    image: '../asset/team/henok.jpg',
+    linkedin: 'https://www.linkedin.com/in/henok-addis-bb1484174/',
+  },
+  {
+    name: 'Fasika Getie',
+    role: 'CEO and Co-Founder',
+    image: '../asset/team/fasika-profile.jpeg',
+    linkedin: 'https://www.linkedin.com/in/fasika-getie-6832aa334/',
+  },
+  {
+    name: 'Gutu Daniel',
+    role: 'Backend Developer',
+    image: '../asset/team/gutu.jpg',
+    linkedin: 'https://www.linkedin.com/in/gutu-daniel',
+  },
+  {
+    name: 'Brook Solomon',
+    role: 'Video editor and graphics designer',
+    image: '../asset/team/biruk.jpg',
+    linkedin: 'https://www.linkedin.com/in/brook-solomon-2785b5324/',
+  },
 ];
 
 export default function About() {
@@ -251,12 +273,50 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
                   <p className="text-gray-500">{member.role}</p>
                   <div className="flex space-x-2 mt-2">
-                    <X className="h-5 w-5 text-gray-500 cursor-pointer" aria-hidden="true" />
-                    <Linkedin className="h-5 w-5 text-gray-500 cursor-pointer" aria-hidden="true" />
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition">
+                        <Linkedin className="h-5 w-5 text-gray-500 cursor-pointer" aria-hidden="true" />
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+        {/* Clients Section */}
+        <div className="mx-auto max-w-7xl px-6 sm:mt-40 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-10 sm:text-4xl">Our Clients</h2>
+          </div>
+          <div className="ml-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+            {/* Client 1 */}
+            <div className="text-center flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img src="../asset/Images/universe-Logo-1.png" alt="Client 1" className="h-20 w-20 object-contain mb-4" />
+              <p className="mt-2 text-sm font-semibold text-gray-700">Universe Internal Medicine Specialty Clinic</p>
+              <a
+                href="http://universehealthservice.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 text-sm mt-1"
+              >
+                Website development (see our client website)
+              </a>
+            </div>
+            <div className="text-center flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img src="../asset/Images/universe-Logo-1.png" alt="Client 1" className="h-20 w-20 object-contain mb-4" />
+              <p className="mt-2 text-sm font-semibold text-gray-700">Universe Internal Medicine Specialty Clinic</p>
+              <a
+                href="http://universehealthservice.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 text-sm mt-1"
+              >
+                Digital Marketing
+              </a>
+            </div>
+
+            {/* Add more client logos here, repeat above block for each client */}
           </div>
         </div>
 
@@ -280,7 +340,7 @@ export default function About() {
             <div className="flex flex-col lg:flex-row justify-between items-center">
               <div className="mb-4 lg:mb-0">
                 <a href="/" className="flex items-center">
-                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
                   <span className="ml-3 text-xl font-bold">Ethio Digitals Solution</span>
                 </a>
               </div>

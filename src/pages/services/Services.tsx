@@ -124,7 +124,7 @@ export default function ServicesPage() {
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Ethio Digitals</span>
-              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Ethio Digitals Logo" />
+              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Ethio Digitals Logo" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -158,7 +158,7 @@ export default function ServicesPage() {
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Ethio Digitals</span>
-                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Ethio Digitals Logo" />
+                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Ethio Digitals Logo" />
               </a>
               <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
@@ -267,7 +267,7 @@ export default function ServicesPage() {
             <div className="flex flex-col lg:flex-row justify-between items-center">
               <div className="mb-4 lg:mb-0">
                 <a href="/" className="flex items-center">
-                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
                   <span className="ml-3 text-xl font-bold">Ethio Digitals Solution</span>
                 </a>
               </div>

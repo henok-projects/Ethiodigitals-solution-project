@@ -35,12 +35,12 @@ const navigation = [
 const links = [
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/henok-addis-bb1484174/',
     icon: Linkedin,
   },
   {
     name: 'Gmail',
-    href: '#',
+    href: 'mailto:henokaddis72@gmail.com',
     icon: Mail,
   },
   {
@@ -178,7 +178,7 @@ export default function HospitalManagementLanding() {
           <div className="flex lg:flex-1 items-center">
             <a href="/" className="flex items-center -m-1.5 p-1.5">
               <span className="sr-only">Ethio Digitals Solution</span>
-              <img className="h-20 w-30 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Ethio Digitals Solution Logo" />
+              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Ethio Digitals Solution Logo" />
             </a>
             <span
               className="ml-3 text-2xl font-bold text-primary"
@@ -222,7 +222,7 @@ export default function HospitalManagementLanding() {
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Ethio Digitals Solution</span>
-                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
               </a>
               <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
@@ -259,19 +259,28 @@ export default function HospitalManagementLanding() {
         {/*  */}
 
         {/* Image Slider Section */}
-        <div className="slider">
-          <AiOutlineArrowLeft className="arrow prev" onClick={prevSlide} />
-          <AiOutlineArrowRight className="arrow next" onClick={nextSlide} />
+        <div className="slider w-full h-screen md:h-[70vh] sm:h-[50vh] flex overflow-hidden relative">
+          <AiOutlineArrowLeft
+            className="arrow prev absolute top-1/2 left-4 -translate-y-1/2 text-2xl text-white cursor-pointer z-10"
+            onClick={prevSlide}
+          />
+          <AiOutlineArrowRight
+            className="arrow next absolute top-1/2 right-4 -translate-y-1/2 text-2xl text-white cursor-pointer z-10"
+            onClick={nextSlide}
+          />
           {sliderData.map((slide, index) => (
-            <div className={index === currentSlide ? 'slide current' : 'slide'} key={index}>
+            <div
+              className={`slide ${index === currentSlide ? 'current flex flex-col items-center justify-center w-full h-full' : 'hidden'}`}
+              key={index}
+            >
               {index === currentSlide && (
-                <div>
-                  <img src={slide.image} alt={slide.heading} className="image" />
-                  <div className="content">
-                    <h2>{slide.heading}</h2>
-                    <p>{slide.desc}</p>
-                    <hr />
-                    <button className="--btn --btn-primary">Get Started</button>
+                <div className="w-full h-full relative flex flex-col items-center justify-center">
+                  <img src={slide.image} alt={slide.heading} className="image w-full h-full object-cover" />
+                  <div className="content absolute bottom-4 left-4 bg-black bg-opacity-60 text-white p-4 md:p-6 rounded-lg max-w-[90%] md:max-w-[70%]">
+                    <h2 className="text-xl md:text-2xl font-bold mb-2">{slide.heading}</h2>
+                    <p className="text-sm md:text-base mb-4">{slide.desc}</p>
+                    <hr className="mb-4 border-gray-500" />
+                    <button className="--btn --btn-primary bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Get Started</button>
                   </div>
                 </div>
               )}
@@ -351,7 +360,7 @@ export default function HospitalManagementLanding() {
             <div className="flex flex-col lg:flex-row justify-between items-center">
               <div className="mb-4 lg:mb-0">
                 <a href="/" className="flex items-center">
-                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                  <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
                   <span className="ml-3 text-xl font-bold">Ethio Digitals Solution</span>
                 </a>
               </div>

@@ -15,12 +15,12 @@ const navigation = [
 const links = [
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/henok-addis-bb1484174/',
     icon: Linkedin,
   },
   {
     name: 'Gmail',
-    href: '#',
+    href: 'mailto:henokaddis72@gmail.com',
     icon: Mail,
   },
   {
@@ -111,7 +111,7 @@ export default function CareersPage() {
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Ethio Digitals Solution</span>
-              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic" />
+              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -145,7 +145,7 @@ export default function CareersPage() {
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Ethio Digitals Solution</span>
-                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Universe Clinic Logo" />
+                <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Universe Clinic Logo" />
               </a>
               <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
@@ -237,7 +237,7 @@ export default function CareersPage() {
         <footer className="bg-primary text-white py-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center">
             <div className="flex items-center">
-              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpg" alt="Ethio Digitals Logo" />
+              <img className="h-10 w-10 rounded-full object-cover" src="../asset/png/logo1.jpeg" alt="Ethio Digitals Logo" />
               <span className="ml-3 text-xl font-bold">Ethio Digitals Solution</span>
             </div>
             <div className="flex space-x-4 mt-4 lg:mt-0">
