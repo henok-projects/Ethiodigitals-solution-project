@@ -292,7 +292,7 @@ export default function About() {
           <div className="ml-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
             {/* Client 1 */}
             <div className="text-center flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
-              <img src="../asset/Images/universe-Logo-1.png" alt="Client 1" className="h-20 w-20 object-contain mb-4" />
+              <img src="../asset/Images/universe-Logo-1.png" alt="Client 1" className="h-20 w-50 object-contain mb-4 rounded-lg" />
               <p className="mt-2 text-sm font-semibold text-gray-700">Universe Internal Medicine Specialty Clinic</p>
               <a
                 href="http://universehealthservice.com/"
@@ -300,11 +300,11 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 text-sm mt-1"
               >
-                Website development (see our client website)
+                Website development (see our clent website)
               </a>
             </div>
             <div className="text-center flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
-              <img src="../asset/Images/universe-Logo-1.png" alt="Client 1" className="h-20 w-20 object-contain mb-4" />
+              <img src="../asset/Images/universe-Logo-1.png" alt="Client 1" className="h-20 w-50 object-contain mb-4 rounded-lg" />
               <p className="mt-2 text-sm font-semibold text-gray-700">Universe Internal Medicine Specialty Clinic</p>
               <a
                 href="http://universehealthservice.com/"
