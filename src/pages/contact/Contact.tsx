@@ -50,7 +50,7 @@ export default function Contact() {
     // Show success message optimistically
     setStatus('success'); // Display success message immediately
     try {
-      const response = await fetch('https://ethiodigitals-solution-backend-1.onrender.com/api/contact', {
+      const response = await fetch('https://ethiodigitals-solution-backend-z1aa.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

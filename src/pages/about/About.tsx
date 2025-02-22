@@ -287,7 +287,7 @@ export default function About() {
         {/* Clients Section */}
         <div className="mx-auto max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-10 sm:text-4xl">Our Clients</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-10 sm:text-4xl">Our Clients and Projects</h2>
           </div>
           <div className="ml-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
             {/* Client 1 */}
@@ -300,19 +300,38 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 text-sm mt-1"
               >
-                Website development (see our clent website)
+                Website development and Digital marketing(see our clent website)
               </a>
             </div>
             <div className="text-center flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
-              <img src="../asset/Images/universe-Logo-1.png" alt="Client 1" className="h-20 w-50 object-contain mb-4 rounded-lg" />
-              <p className="mt-2 text-sm font-semibold text-gray-700">Universe Internal Medicine Specialty Clinic</p>
+              <img src="../asset/Images/addisfinancial.png" alt="Client 1" className="h-20 w-50 object-contain mb-4 rounded-lg" />
+              <p className="mt-2 text-sm font-semibold text-gray-700">Addisinancial.com</p>
               <a
-                href="http://universehealthservice.com/"
+                href="http://Addisinancial.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 text-sm mt-1"
               >
-                Digital Marketing
+                Software development
+              </a>
+            </div>
+            <div className="text-center flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img src="../asset/Images/common.png" alt="Client 1" className="h-20 w-50 object-contain mb-4 rounded-lg" />
+              <p className="mt-2 text-sm font-semibold text-gray-700">Ethiodigitals.com</p>
+              <a href="/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm mt-1">
+                Diital marketing website ( web development )
+              </a>
+            </div>
+            <div className="text-center flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img src="../asset/Images/galsie.png" alt="Client 1" className="h-20 w-50 object-contain mb-4 rounded-lg" />
+              <p className="mt-2 text-sm font-semibold text-gray-700">Smart Home System (Galsie)</p>
+              <a
+                href="http://galsie.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 text-sm mt-1"
+              >
+                Software development
               </a>
             </div>
 
